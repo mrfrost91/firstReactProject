@@ -1,6 +1,5 @@
 import React from 'react';
-import loadJson from './loadJson';
-import './Style.css';
+import loadJson from '../../api/loadJson';
 
 class Field extends React.Component {
     constructor(props) {

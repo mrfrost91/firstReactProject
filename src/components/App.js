@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import Header from "./Header";
-import Field from './Field';
-import Footer from './Footer';
-import ScrollTopButton from './ScrollTopButton';
+import Header from "./common/header/Header";
+import Field from './dashboard/Field';
+import Footer from './common/Footer';
+import ScrollTopButton from './common/ScrollTopButton';
 
 class App extends Component {
     render() {

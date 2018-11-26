@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import './Style.css';
 import RegisterForm from './RegisterForm';
 import LoginForm from './LoginForm';
+import './style.css';
 
 
 class Header extends Component {
