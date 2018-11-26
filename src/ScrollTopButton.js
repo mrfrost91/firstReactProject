@@ -12,7 +12,6 @@ class ScrollTopButton extends Component {
     }
 
     showScrollTopBtn() {
-        console.log(window.pageYOffset);
         if (window.pageYOffset > 400) {
             this.setState({showScrollTopBtn: true});
         } else {
