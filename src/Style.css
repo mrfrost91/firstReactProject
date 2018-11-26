@@ -50,10 +50,11 @@ nav a:hover {
     cursor: pointer;
 }
 
-.register_link {
+.login_register_switch {
     color: black;
     cursor: pointer;
     text-decoration: underline;
+    margin: 5px;
 }
 
 .headercontent {
@@ -158,7 +159,7 @@ h1 {
 #loginform {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 10px 10px 0 10px;
 }
 
 #loginform > input {

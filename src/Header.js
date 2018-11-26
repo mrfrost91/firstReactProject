@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import './Style.css';
+import RegisterForm from './RegisterForm';
+import LoginForm from './LoginForm';
+
 
 class Header extends Component {
     constructor(props) {
         super(props);
-        this.state = {loginExpand: false, searchExpand: false};
+        this.state = {loginExpand: false, searchExpand: false, showLoginForm: true};
     }
 
     toggleLoginExpand() {
@@ -13,6 +16,10 @@ class Header extends Component {
 
     toggleSearchExpand() {
         this.setState({searchExpand: !this.state.searchExpand, loginExpand: false});
+    }
+
+    switchLoginRegisterForms() {
+        this.setState({showLoginForm: !this.state.showLoginForm});
     }
 
     render() {
@@ -46,25 +53,24 @@ class Header extends Component {
                                 <a ref="btn" className="navtext" onClick={this.toggleLoginExpand.bind(this)}>
                                     <img src="img/login3.png" alt="Login Icon"/>
                                 </a>
-                                <div id="formcontainer" className={this.state.loginExpand ? "logincontainer expand" : "logincontainer"}>
-                                    <form id="loginform" method="post" action="/login">
-                                        <input type="text" name="username" placeholder="Логин" id="login"/>
-                                        <input type="password" name="password" placeholder="Пароль" id="pass"/>
-                                        <input type="submit" className="log_reg_button" value="Войти" />
-                                        <div className="link_div">
-                                            <a href="/register" className="register_link">Зарегистрироваться.</a>
-                                        </div>
-                                    </form>
+                                <div id="formcontainer"
+                                     className={this.state.loginExpand ? "logincontainer expand" : "logincontainer"}>
+                                    {this.state.showLoginForm ? <LoginForm/> : <RegisterForm/>}
+                                    <div className="link_div">
+                                        <a onClick={this.switchLoginRegisterForms.bind(this)}
+                                           className="login_register_switch">{this.state.showLoginForm ? "Зарегестрироваться" : "Войти на сайт"}</a>
+                                    </div>
                                 </div>
                             </div>
                             <div className="searchicon">
                                 <a className="navtext" onClick={this.toggleSearchExpand.bind(this)}>
                                     <img src="img/search2.png" alt="Search Icon"/>
                                 </a>
-                                <div id="searchcontainer" className={this.state.searchExpand ? "searchcontainer expand" : "searchcontainer"}>
+                                <div id="searchcontainer"
+                                     className={this.state.searchExpand ? "searchcontainer expand" : "searchcontainer"}>
                                     <form id="searchform" action="/search" method="GET">
                                         <input type="text" placeholder="Поиск" name="search" value=""/>
-                                        <input type="submit" className="hidden_button" value="Искать" />
+                                        <input type="submit" className="hidden_button" value="Искать"/>
                                     </form>
                                 </div>
                             </div>
