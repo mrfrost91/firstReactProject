@@ -1,0 +1,391 @@
+html, body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ccc url(back.jpg) fixed;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    position: relative;
+}
+
+#button_move_up {
+    display: none
+}
+
+header {
+    height: auto;
+    background: #555;
+    color: #dbdbdb;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    height: 100%;
+    margin-right: auto;
+}
+
+nav a {
+    font-size: 20px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+li {
+    height: 100%;
+}
+
+nav a:hover {
+    color: #555;
+    background: white;
+    cursor: pointer;
+}
+
+.headercontent a {
+    color: #f1f1f1;
+    display: flex;
+    text-decoration: none;
+}
+
+.headercontent {
+    display: flex;
+    flex-direction: row;
+    width: 840px;
+    height: 54px;
+    align-items: center;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+}
+
+.icons a img {
+    width: 34px;
+    height: 34px;
+}
+
+.loginicon {
+    background: #c42a0f;
+    height: inherit;
+}
+
+.searchicon {
+    background: #0f66c4;
+    height: inherit;
+}
+
+.logincontainer {
+    position: fixed;
+    width: 300px;
+    background: inherit;
+    border-radius: 0 0 5px 5px;
+    margin: 0 0 0 -192px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s;
+}
+
+.searchcontainer {
+    position: fixed;
+    width: 300px;
+    background: inherit;
+    border-radius: 0 0 5px 5px;
+    margin: 0 0 0 -246px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s;
+}
+
+.expand {
+    max-height: 300px;
+}
+
+#page {
+    width: 100%;
+    height: auto;
+}
+
+.dokalogo {
+    height: inherit;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+
+.dokalogo:hover {
+    color: white;
+    background: #333;
+}
+
+.dokalogo img {
+    height: 34px;
+    width: 34px;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 30px;
+    padding-left: 5px;
+    margin: 0;
+}
+
+.navtext {
+    text-transform: capitalize;
+    font-weight: bold;
+    padding: 0 10px 0 10px;
+    height: inherit;
+    align-items: center;
+    cursor: pointer;
+}
+
+#loginform {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+#loginform > input {
+    background: white;
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#searchform {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+#searchform > input {
+    background: white;
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.Fieldscontainer {
+    color: #fff;
+    padding: 0 20px 0 20px;
+    background: #000;
+    max-width: 800px;
+    border-radius: 10px;
+    margin: 90px auto 48px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background: #555;
+    color: #f1f1f1;
+    opacity: 0.85;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 10px;
+    margin: 0 0 20px 0;
+}
+
+.field:first-of-type {
+    margin: 20px 0 20px 0;
+}
+
+.field > p {
+    color: #000;
+    padding: 0 10px 0 10px;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.heroimg {
+    display: flex;
+}
+
+.heroimg img {
+    border-radius: 10px;
+}
+
+.attrrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.attrcol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.attrimg {
+    display: flex;
+    align-items: center;
+    height: 48px;
+}
+
+.imgcontainer {
+    margin: 0 0 0 20px;
+}
+
+.value {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #000;
+    font-weight: bold;
+}
+
+.txtcontainer {
+    width: 100%;
+}
+
+.heroname {
+    width: 100%;
+}
+
+h3 {
+    color: #000;
+    text-align: center;
+}
+
+.herotext p {
+    margin: 0 20px 10px 15px;
+    color: #000;
+}
+
+#button_move_up {
+    position: fixed;
+    top: 75px;
+    left: 10px;
+    height: 50px;
+    background: #555;
+    color: #f1f1f1;
+    opacity: 0.5;
+    width: 50px;
+
+}
+
+#button_move_up:hover {
+    color: #fff;
+    cursor: pointer;
+    opacity: 1;
+}
+
+#button_move_up > div {
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+}
+
+#root {
+    width: 100%;
+}
+
+@media screen and (max-device-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+
+    #top {
+        height: 75px;
+    }
+
+    #top a {
+        align-items: center;
+        font-size: 3em;
+    }
+
+    .dokalogo img {
+        height: 72px;
+        width: 72px;
+    }
+
+    #first {
+        max-width: 100%;
+    }
+
+    .imgcontainer {
+        margin: 0;
+    }
+
+    .heroimg {
+        justify-content: center;
+    }
+
+    #button_move_up {
+        top: 100px;
+        height: 100px;
+        width: 100px;
+    }
+
+    #button_move_up > div {
+        font-size: 4em;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    .value {
+        font-size: 2em;
+    }
+
+    footer {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+
+    #top a {
+        align-items: center;
+    }
+
+    #first {
+        max-width: 100%;
+    }
+
+    .imgcontainer {
+        margin: 0;
+    }
+
+    .heroimg {
+        justify-content: center;
+    }
+}
