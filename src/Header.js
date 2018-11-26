@@ -4,23 +4,15 @@ import './Style.css';
 class Header extends Component {
     constructor(props) {
         super(props);
-        this.state = {loginClass: "", searchClass: ""};
+        this.state = {loginExpand: false, searchExpand: false};
     }
 
-    toggleExpandLogin() {
-        if (this.state.loginClass === "") {
-            this.setState({loginClass: " expand", searchClass: ""});
-        } else {
-            this.setState({loginClass: ""});
-        }
+    toggleLoginExpand() {
+        this.setState({loginExpand: !this.state.loginExpand, searchExpand: false});
     }
 
-    toggleExpandSearch() {
-        if (this.state.searchClass === "") {
-            this.setState({loginClass: "", searchClass: " expand"});
-        } else {
-            this.setState({searchClass: ""});
-        }
+    toggleSearchExpand() {
+        this.setState({searchExpand: !this.state.searchExpand, loginExpand: false});
     }
 
     render() {
@@ -51,33 +43,28 @@ class Header extends Component {
                         </nav>
                         <div className="icons">
                             <div className="loginicon">
-                                <a ref="btn" className="navtext" onClick={this.toggleExpandLogin.bind(this)}>
+                                <a ref="btn" className="navtext" onClick={this.toggleLoginExpand.bind(this)}>
                                     <img src="img/login3.png" alt="Login Icon"/>
                                 </a>
-                                <div id="formcontainer" className={"logincontainer" + this.state.loginClass}>
+                                <div id="formcontainer" className={this.state.loginExpand ? "logincontainer expand" : "logincontainer"}>
                                     <form id="loginform" method="post" action="/login">
                                         <input type="text" name="username" placeholder="Логин" id="login"/>
                                         <input type="password" name="password" placeholder="Пароль" id="pass"/>
-                                        <input type="submit" value="Войти" styles={{'cursor': 'pointer'}}/>
-                                        <div styles={{'display': 'flex', 'justify-content': 'center'}}>
-                                            <a href="/register"
-                                               styles={{
-                                                   'color': 'initial',
-                                                   'cursor': 'pointer',
-                                                   'text-decoration': 'underline'
-                                               }}>Зарегистрироваться.</a>
+                                        <input type="submit" className="log_reg_button" value="Войти" />
+                                        <div className="link_div">
+                                            <a href="/register" className="register_link">Зарегистрироваться.</a>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                             <div className="searchicon">
-                                <a className="navtext" onClick={this.toggleExpandSearch.bind(this)}>
+                                <a className="navtext" onClick={this.toggleSearchExpand.bind(this)}>
                                     <img src="img/search2.png" alt="Search Icon"/>
                                 </a>
-                                <div id="searchcontainer" className={"searchcontainer" + this.state.searchClass}>
+                                <div id="searchcontainer" className={this.state.searchExpand ? "searchcontainer expand" : "searchcontainer"}>
                                     <form id="searchform" action="/search" method="GET">
                                         <input type="text" placeholder="Поиск" name="search" value=""/>
-                                        <input type="submit" value="Искать" styles={{'display': 'none'}}/>
+                                        <input type="submit" className="hidden_button" value="Искать" />
                                     </form>
                                 </div>
                             </div>

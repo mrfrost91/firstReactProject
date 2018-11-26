@@ -54,10 +54,10 @@ nav a:hover {
     cursor: pointer;
 }
 
-.headercontent a {
-    color: #f1f1f1;
-    display: flex;
-    text-decoration: none;
+.register_link {
+    color: black;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .headercontent {
@@ -122,6 +122,9 @@ nav a:hover {
 }
 
 .dokalogo {
+    color: #f1f1f1;
+    display: flex;
+    text-decoration: none;
     height: inherit;
     align-items: center;
     padding: 0 10px 0 10px;
@@ -145,6 +148,9 @@ h1 {
 }
 
 .navtext {
+    color: #f1f1f1;
+    display: flex;
+    text-decoration: none;
     text-transform: capitalize;
     font-weight: bold;
     padding: 0 10px 0 10px;
@@ -312,6 +318,19 @@ h3 {
 
 #root {
     width: 100%;
+}
+
+.hidden_button {
+    display: none;
+}
+
+.link_div {
+    display: flex;
+    justify-content: center;
+}
+
+.log_reg_button {
+    cursor: pointer;
 }
 
 @media screen and (max-device-width: 800px) {
