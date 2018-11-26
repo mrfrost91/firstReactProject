@@ -9,10 +9,6 @@ html, body {
     position: relative;
 }
 
-#button_move_up {
-    display: none
-}
-
 header {
     height: auto;
     background: #555;
@@ -292,7 +288,15 @@ h3 {
     color: #000;
 }
 
-#button_move_up {
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+#button_scroll_top {
     position: fixed;
     top: 75px;
     left: 10px;
@@ -304,13 +308,13 @@ h3 {
 
 }
 
-#button_move_up:hover {
+#button_scroll_top:hover {
     color: #fff;
     cursor: pointer;
     opacity: 1;
 }
 
-#button_move_up > div {
+#button_scroll_top > div {
     text-align: center;
     color: #fff;
     font-size: 30px;
@@ -364,13 +368,13 @@ h3 {
         justify-content: center;
     }
 
-    #button_move_up {
+    #button_scroll_top {
         top: 100px;
         height: 100px;
         width: 100px;
     }
 
-    #button_move_up > div {
+    #button_scroll_top > div {
         font-size: 4em;
     }
 

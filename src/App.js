@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Header from "./Header";
 import Field from './Field';
 import Footer from './Footer';
+import ScrollTopButton from './ScrollTopButton';
 
 class App extends Component {
     render() {
@@ -12,6 +13,7 @@ class App extends Component {
                     <Field/>
                 </div>
                 <Footer/>
+                <ScrollTopButton/>
             </div>
         );
     }
