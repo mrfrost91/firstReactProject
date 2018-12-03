@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #ccc url(back.jpg) fixed;
+    background: #ccc url(assets/back.jpg) fixed;
     display: flex;
     width: 100%;
     min-height: 100vh;
@@ -110,6 +110,10 @@ nav a:hover {
 }
 
 .expand {
+    max-height: 300px;
+}
+
+.fullexpand {
     max-height: 300px;
 }
 

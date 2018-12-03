@@ -1,6 +1,5 @@
 import React from 'react';
-import loadJson from './loadJson';
-import './Style.css';
+import loadJson from '../../api/loadJson';
 
 class Field extends React.Component {
     constructor(props) {
@@ -10,7 +9,7 @@ class Field extends React.Component {
 
     componentWillMount() {
         loadJson("http://127.0.0.1:8080/items/").then((response) => {
-            var jsonArray = JSON.parse(response);
+            let jsonArray = JSON.parse(response);
             this.setState({heroes: jsonArray})
         }, function (Error) {
             console.log(Error);
@@ -19,9 +18,9 @@ class Field extends React.Component {
     }
 
     render() {
-        var result = [];
-        for (var i = 0; i < this.state.heroes.length; i++) {
-            var hero = this.state.heroes[i];
+        let result = [];
+        for (let i = 0; i < this.state.heroes.length; i++) {
+            let hero = this.state.heroes[i];
             result.push(
                 <div className="field" key={hero._id}>
                     <div className="heroname"><h3>{hero.name}</h3></div>

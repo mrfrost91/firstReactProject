@@ -1,6 +1,6 @@
 function loadJson(url) {
     return new Promise(function (resolve, reject) {
-        var xhr = new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
         xhr.overrideMimeType("application/json");
         xhr.open('GET', url, true);
         xhr.onload = function () {

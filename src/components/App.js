@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
-import Header from "./Header";
-import Field from './Field';
-import Footer from './Footer';
-import ScrollTopButton from './ScrollTopButton';
+import '../Style.css';
+import Header from "./common/header/Header";
+import Field from './dashboard/Field';
+import Footer from './common/Footer';
+import Audio from './common/Audio';
+import ScrollTopButton from './common/ScrollTopButton';
 
 class App extends Component {
     render() {
@@ -14,6 +16,7 @@ class App extends Component {
                 </div>
                 <Footer/>
                 <ScrollTopButton/>
+                <Audio/>
             </div>
         );
     }

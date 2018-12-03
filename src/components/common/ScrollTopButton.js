@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import './Style.css';
 
 class ScrollTopButton extends Component {
     constructor(props) {
         super(props);
-        this.state = {showScrollTopBtn: false};
+        this.state = {isScrollTopBtnShown: false};
     }
 
     componentDidMount() {
@@ -13,9 +12,9 @@ class ScrollTopButton extends Component {
 
     showScrollTopBtn() {
         if (window.pageYOffset > 400) {
-            this.setState({showScrollTopBtn: true});
+            this.setState({isScrollTopBtnShown: true});
         } else {
-            this.setState({showScrollTopBtn: false});
+            this.setState({isScrollTopBtnShown: false});
         }
     }
 
@@ -26,7 +25,7 @@ class ScrollTopButton extends Component {
     render() {
         return (
             <div id="button_scroll_top" onClick={this.scrollTop.bind(this)}
-                 className={this.state.showScrollTopBtn ? "show" : "hide"}>
+                 className={this.state.isScrollTopBtnShown ? "show" : "hide"}>
                 <div>🢁</div>
             </div>
         );
